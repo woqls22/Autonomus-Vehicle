@@ -1,0 +1,9 @@
+./Scripts/.idea
+Scripts/__pycache__/LaneRecognition.cpython-36.pyc
+Scripts/.idea/inspectionProfiles/profiles_settings.xml
+Scripts/.idea/vcs.xml
+Scripts/.idea/Scripts.iml
+Scripts/.idea/rSettings.xml
+Scripts/.idea/modules.xml
+Scripts/.idea/misc.xml
+Scripts/test_video.mp4
