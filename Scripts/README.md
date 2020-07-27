@@ -26,4 +26,4 @@
 
 - [20.07.27] 전방 도로이미지에 대해 흰색 Masking작업
 
-<img src= "./2.png" width="500px">
+<img src= "./2.png" height="230px">
