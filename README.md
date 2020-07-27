@@ -25,6 +25,7 @@ pip install opencv-python
 
 - [X] 전처리 과정을 통해 왜곡된 직선을 직선 형태로 수정. 대표직선 검출 [07.12]
 - [X] ROI를 바탕으로 차선 인식 Region 외의 Thresholding적용 [07.12]
+- [X] 차선 색상 마스킹[07.27]
 - [ ] 원근 변환을 통해 전방 도로이미지를 변환.
 - [ ] Sliding Window Searching을 통해 곡선 차선의 인식오차 최소화
 - [ ] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함.
@@ -39,3 +40,7 @@ pip install opencv-python
 - [20.07.12] 영상처리모듈 : ROI, Hough 변환을 통해 전방 도로이미지에 대한 대표 직선 검출 구현
 
 <img src= "./Scripts/1.png" width="500px">
+
+- [20.07.27] 전방 도로이미지에 대해 흰색 Masking작업
+
+<img src= "./Scripts/2.png" height="230px">
