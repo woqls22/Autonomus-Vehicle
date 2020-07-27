@@ -7,17 +7,24 @@ import matplotlib.pyplot as plt
 def Canny(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (5,5), 0)
-    canny = cv2.Canny(blur, 50, 150)
+    canny = cv2.Canny(blur, 50, 200)
     return canny
 
-#관심 영역
-def InterestRegion(frame):
+def InterestRegion(frame, width, height):
     # Width 1280기준
-    height = frame.shape[0]
-    area = np.array([[(300,height), (1000,height), (650,250)]]) # Area 지정
+    frame = np.array(frame, dtype=np.uint8)
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    lower_white = np.array([110,110,110])
+    upper_white = np.array([255,255,255])
+
+    mask_white = cv2.inRange(rgb, lower_white, upper_white)
+    res = cv2.bitwise_and(frame, frame, mask = mask_white)
+
+    area = np.array([[(width*0.5,(height*0.4)),(0,(height*0.65)),(0,height), (width,height),(width,(height*0.6))]], np.int32) # Area 지정
     mask = np.zeros_like(frame)
-    cv2.fillPoly(mask, area, 255)
-    interestarea = cv2.bitwise_and(frame, mask)
+    cv2.fillPoly(mask, area, (0,150,150))
+    interestarea = cv2.bitwise_and(res, mask)
     return interestarea
 
 

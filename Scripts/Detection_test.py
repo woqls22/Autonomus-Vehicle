@@ -1,23 +1,23 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import LaneRecognition as LR
+import matplotlib.pyplot as plt
 
-capture = cv2.VideoCapture("./test_video.mp4")
+FileName = "./track-s.mkv"
+capture = cv2.VideoCapture(FileName)
 if(not capture.isOpened()):
     print("Error : Opening Video")
 
 height, width = (int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)), int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)))
-
+retval, frame = capture.read()
 while True:
-    if (capture.get(cv2.CAP_PROP_POS_FRAMES) == capture.get(cv2.CAP_PROP_FRAME_COUNT)):
-        capture.open("./test_video.mp4")
-    try:
         retval, frame = capture.read()
         cv2.imshow('Original Video', frame)
-        canny = LR.Canny(frame)
-        InterestArea = LR.InterestRegion(canny)
-        cv2.imshow('InterestArea', InterestArea)
+        InterestArea = LR.InterestRegion(frame, width, height)
+        canny = LR.Canny(InterestArea)
+
+        cv2.imshow('InterestArea', canny)
+        '''
         line_arr = LR.Hough_lines(InterestArea, 1,1*np.pi/180,30,10,20) #허프변환
         line_arr = np.squeeze(line_arr)
         #gradient 도출
@@ -39,18 +39,19 @@ while True:
         Lx1,Ly1,Lx2,Ly2 = LeftLine
         Rx1,Ry1,Rx2,Ry2 = RightLine
         Cx = Lx2+Rx2/2
-        print(Cx)
+        #print(Cx)
         Cy = Ly2+Ry2/2
         if(Cx<1050 and Cx>900and Lx2<Rx2):
             LR.draw_lines(temp, LeftLine)
             LR.draw_lines(temp, RightLine)
-
-        result = LR.weighted_img(temp, frame)  # 원본 이미지에 검출된 선 overlap
+        result = frame
+        result = LR.weighted_img(temp, result)  # 원본 이미지에 검출된 선 overlap
         cv2.imshow('result', result)  # 결과 이미지 출력
-    except:
-        pass
 
-    if cv2.waitKey(33) > 0: break
+        '''
+
+        if (cv2.waitKey(70) > 0):
+                break
 
 capture.release()
 cv2.destroyAllWindows()
