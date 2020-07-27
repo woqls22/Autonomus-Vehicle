@@ -21,7 +21,9 @@
 ---
 ## Revision History
 - [20.07.12] ROI, Hough 변환을 통해 전방 도로이미지에 대한 대표 직선 검출
+
 <img src= "./1.png" width="500px">
 
 - [20.07.27] 전방 도로이미지에 대해 흰색 Masking작업
+
 <img src= "./2.png" width="500px">
