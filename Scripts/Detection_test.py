@@ -15,10 +15,28 @@ while True:
         #cv2.imshow('Original Video', frame)
         InterestArea = LR.InterestRegion(frame, width, height)
         canny = LR.Canny(InterestArea)
-        LR.top_view(frame, width, height)
         #bird View Point
+        dst = LR.top_view(frame, width, height)
+        src1 = LR.Canny(dst)
+
+        lines = cv2.HoughLinesP(src1, 0.8, np.pi / 180, 100, minLineLength=100, maxLineGap=60)
+        cv2.line(dst, (int(width / 2), height), (int(width / 2), int(height / 1.3)), (255, 255, 0), 8)
+        direction = "Go Straight"
+        if (lines is not None):
+                direction = "Go Straight"
+                for i in lines:
+                        cv2.line(dst, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
+                        if (i[0][2] < int(width / 3)):
+                                direction = "Turn Right " + str(abs(width / 2 + i[0][2]))
+                        elif (i[0][0] > int(width * 2 / 3)):
+                                direction = "Turn Left " + str(abs(width / 2 - i[0][0]))
+
+        dst = cv2.putText(dst, '[Driving Info] : ' + direction, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8,
+                            (0, 255, 255), 2, cv2.LINE_AA)
+
+        # Origin Frame------------------------
         cv2.circle(frame, (int(width*0.2), int(height*0.55)), 5, (255, 255, 255), -1)
-        cv2.circle(frame, (int(width * 0.7), int(height * 0.55)), 5, (255, 255, 255), -1)
+        cv2.circle(frame, (int(width * 0.8), int(height * 0.55)), 5, (255, 255, 255), -1)
         lines = cv2.HoughLinesP(canny, 1.2, np.pi / 180, 100, minLineLength=100, maxLineGap=60)
         cv2.line(frame, (int(width/2),height), (int(width/2),int(height/1.3)), (255, 255, 0), 8)
         if(lines is not None):
@@ -32,6 +50,7 @@ while True:
 
         frame = cv2.putText(frame, '[Driving Info] : '+direction,  (50, 50) , cv2.FONT_HERSHEY_SIMPLEX,0.8, (0,255,255), 2, cv2.LINE_AA)
         cv2.imshow("dst", frame)
+        cv2.imshow("dst1",dst)
 
         if (cv2.waitKey(70) > 0):
                 break
