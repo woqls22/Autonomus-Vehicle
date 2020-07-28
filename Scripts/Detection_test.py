@@ -16,7 +16,8 @@ if(YOLO_FLAG):
                 classes = [line.strip() for line in f.readlines()]
         layer_names = net.getLayerNames()
         output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
-        colors = np.random.uniform(0, 255, size=(len(classes), 3))
+        colors = (0,0,255)
+        #colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
 height, width = (int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)), int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)))
 retval, frame = capture.read()
@@ -59,8 +60,8 @@ while True:
                                 x, y, w, h = boxes[i]
                                 label = str(classes[class_ids[i]])
                                 color = colors[i]
-                                cv2.rectangle(YOLO, (x, y), (x + w, y + h), color, 2)
-                                cv2.putText(YOLO, label, (x, y + 30), font, 3, color, 3)
+                                cv2.rectangle(YOLO, (x, y), (x + w, y + h), (0,255,0), 2)
+                                cv2.putText(YOLO, label, (x, y + 30), font, 3, (0,255,255), 2)
 
 
         InterestArea = LR.InterestRegion(frame, width, height)
@@ -71,9 +72,9 @@ while True:
 
         lines = cv2.HoughLinesP(src1, 0.8, np.pi / 180, 100, minLineLength=100, maxLineGap=60)
         cv2.line(dst, (int(width / 2), height), (int(width / 2), int(height / 1.3)), (255, 255, 0), 8)
-        direction = "Go Straight"
+        direction = ""
         if (lines is not None):
-                direction = "Go Straight"
+                direction = ""
                 for i in lines:
                         cv2.line(dst, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if (i[0][2] < int(width / 3)):
@@ -90,7 +91,7 @@ while True:
         lines = cv2.HoughLinesP(canny, 1.2, np.pi / 180, 100, minLineLength=100, maxLineGap=60)
         cv2.line(frame, (int(width/2),height), (int(width/2),int(height/1.3)), (255, 255, 0), 8)
         if(lines is not None):
-                direction = "Go Straight"
+                direction = ""
                 for i in lines:
                         cv2.line(frame, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if(i[0][2]<int(width/4)):
