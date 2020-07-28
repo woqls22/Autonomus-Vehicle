@@ -30,4 +30,4 @@
 
 - [20.07.28] Guide Line 기준 direction 결정 모듈 구현
 
-<img src= "./3.png" height="400px">
+<img src= "./3.png" height="350px"><img src= "./4.png" height="350px">
