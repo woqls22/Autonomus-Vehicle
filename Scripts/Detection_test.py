@@ -15,12 +15,14 @@ while True:
         #cv2.imshow('Original Video', frame)
         InterestArea = LR.InterestRegion(frame, width, height)
         canny = LR.Canny(InterestArea)
-
-        #cv2.imshow('canny', canny)
-        lines = cv2.HoughLinesP(canny, 1, np.pi / 180, 100, minLineLength=70, maxLineGap=30)
-        cv2.line(frame, (int(width/2),height), (int(width/2),int(height/1.3)), (255, 0, 255), 2)
-        direction = "Go Straight"
+        LR.top_view(frame, width, height)
+        #bird View Point
+        #cv2.circle(frame, (int(width*0.1), int(height*0.6)), 5, (255, 255, 255), -1)
+        #cv2.circle(frame, (int(width * 0.8), int(height * 0.6)), 5, (255, 255, 255), -1)
+        lines = cv2.HoughLinesP(canny, 1.2, np.pi / 180, 100, minLineLength=100, maxLineGap=60)
+        cv2.line(frame, (int(width/2),height), (int(width/2),int(height/1.3)), (255, 255, 0), 8)
         if(lines is not None):
+                direction = "Go Straight"
                 for i in lines:
                         cv2.line(frame, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if(i[0][2]<int(width/4)):

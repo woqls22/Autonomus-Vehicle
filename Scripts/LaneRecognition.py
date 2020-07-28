@@ -51,3 +51,22 @@ def get_representative(frame, lines):  # Representative Line 구하기
 
     result = [x1, y1, x2, y2]
     return result
+
+def top_view(frame, width, height):
+    #area = np.array([[(width*0.5,(height*0.4)),(0,(height*0.65)),(0,height), (width,height),(width,(height*0.6))]], np.int32) # Area 지정
+    #좌상, 좌하, 우상, 우하
+    '''
+    cv2.circle(frame, (int(width*0.2), int(height*0.6)), 5, (255, 255, 255), -1)
+    cv2.circle(frame, (int(width * 0.7), int(height * 0.6)), 5, (255, 255, 255), -1)
+    '''
+    left_bottom = [0,height]
+    right_bottom = [width,height]
+    left_top = [int(width*0.2),int(height*0.6)]
+    right_top = [int(width*0.7), int(height*0.6)]
+    pts1 = np.float32([[left_top,left_bottom,right_top,right_bottom]])
+    # 좌표의 이동점
+    pts2 = np.float32([[0, 0], [0, 480], [640, 0], [640, 480]])
+    # pts1의 좌표에 표시. perspective 변환 후 이동 점 확인.
+    M = cv2.getPerspectiveTransform(pts1, pts2)
+    dst = cv2.warpPerspective(frame, M, (640, 480))
+    cv2.imshow('transform',dst)
