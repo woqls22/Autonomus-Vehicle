@@ -24,11 +24,10 @@ while True:
                 for i in lines:
                         cv2.line(frame, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if(i[0][2]<int(width/4)):
-                                direction = "Turn Right"
-                                print("Too Left : Turn Right")
+                                direction = "Turn Right " + str(abs(width/2+i[0][2]))
                         elif(i[0][0]>int(width*3/4)):
-                                direction = "Turn Left"
-                                print("Too Right : Turn Left")
+                                direction = "Turn Left "+ str(abs(width/2-i[0][0]))
+
         frame = cv2.putText(frame, '[Driving Info] : '+direction,  (50, 50) , cv2.FONT_HERSHEY_SIMPLEX,0.8, (0,255,255), 2, cv2.LINE_AA)
         cv2.imshow("dst", frame)
 
