@@ -61,12 +61,12 @@ def top_view(frame, width, height):
     '''
     left_bottom = [0,height]
     right_bottom = [width,height]
-    left_top = [int(width*0.2),int(height*0.6)]
-    right_top = [int(width*0.7), int(height*0.6)]
+    left_top = [int(width*0.2),int(height*0.55)]
+    right_top = [int(width*0.7), int(height*0.55)]
     pts1 = np.float32([[left_top,left_bottom,right_top,right_bottom]])
     # 좌표의 이동점
     pts2 = np.float32([[0, 0], [0, 480], [640, 0], [640, 480]])
     # pts1의 좌표에 표시. perspective 변환 후 이동 점 확인.
     M = cv2.getPerspectiveTransform(pts1, pts2)
     dst = cv2.warpPerspective(frame, M, (640, 480))
-    cv2.imshow('transform',dst)
+    cv2.imshow('BirdView',dst)
