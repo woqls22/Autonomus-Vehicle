@@ -47,4 +47,4 @@ pip install opencv-python
 
 - [20.07.28] Guide Line 기준 direction 결정 모듈 구현
 
-<img src= "./Scripts/3.png" height="400px">
+<img src= "./Scripts/3.png" height="350px"><img src= "./Scripts/4.png" height="350px">
