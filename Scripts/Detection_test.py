@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 FileName = "./track-s.mkv"
 capture = cv2.VideoCapture(FileName)
-YOLO_FLAG= False
+YOLO_FLAG= True
 if(not capture.isOpened()):
         print("Error : Opening Video")
 

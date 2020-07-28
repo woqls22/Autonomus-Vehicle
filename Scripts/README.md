@@ -14,7 +14,11 @@
 ---
 
 # Obstacle Recognition
-- 추가예정
+
+- [X] Object Recognition ML Model Load(Yolov3-tiny Model 적용, 신뢰도 0.5기준 object detection) [07.28]
+
+<img src= "./9.PNG" height="330px">
+
 ---
 # Traffic Sign Recognition
 - 추가예정

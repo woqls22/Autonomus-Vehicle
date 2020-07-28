@@ -30,7 +30,7 @@ pip install opencv-python
 - [ ] Sliding Window Searching을 통해 곡선 차선의 인식오차 최소화
 - [ ] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함.
 - [ ] 실질적 주행을 위해 조명, 바닥면 상태를 고려할 수 있는 머신러닝 모델적용
-- [ ] Object Recognition ML Model Load(YOLO V3)
+- [X] Object Recognition ML Model Load(YOLO V3) [07.28]
 - [ ] Traffic Sign Recognition Model Load(YOLO V3)
 - [ ] HW Control Sign Generate
 - [ ] 하드웨어-영상처리 모듈간 통신 구현
@@ -52,3 +52,7 @@ pip install opencv-python
 - [20.07.28] 전방 도로 bird view 구현
 
 <img src= "./Scripts/8.PNG" height="330px">
+
+- [20.07.28] YOLO tiny v3모델 적용, object detection
+
+<img src= "./Scripts/9.PNG" height="330px">
