@@ -23,21 +23,20 @@ def InterestRegion(frame, width, height):
 
     area = np.array([[(width*0.5,(height*0.4)),(0,(height*0.65)),(0,height), (width,height),(width,(height*0.6))]], np.int32) # Area 지정
     mask = np.zeros_like(frame)
-    cv2.fillPoly(mask, area, (0,150,150))
+    cv2.fillPoly(mask, area, (0,150,255))
     interestarea = cv2.bitwise_and(res, mask)
+    #cv2.imshow('mask',interestarea)
     return interestarea
 
 
 def Hough_lines(interestregion, rho, theta, threshold, min_line_len, max_line_gap):
     lines = cv2.HoughLinesP(interestregion,rho,theta,threshold,np.array([]),minLineLength=min_line_len, maxLineGap=max_line_gap)
-    #line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
-    #draw_lines(line_img, lines)
     return lines
 
 def weighted_img(img, initial_img, a=1, b=1., l=0.): # 두 이미지 operlap 하기
     return cv2.addWeighted(initial_img, a, img, b, l)
 
-def draw_lines(frame, lines, color=[0, 255, 0], thickness=2): # 선 그리기
+def draw_lines(frame, lines, color=[0, 0, 255], thickness=2): # 선 그리기
     cv2.line(frame, (lines[0], lines[1]), (lines[2], lines[3]), color, thickness)
 
 
