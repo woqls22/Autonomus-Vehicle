@@ -51,4 +51,4 @@ pip install opencv-python
 
 - [20.07.28] 전방 도로 bird view 구현
 
-<img src= "./Scripts/8.PNG" height="210px"><img src= "./Scripts/7.PNG" height="210px">
+<img src= "./Scripts/8.PNG" height="330px">
