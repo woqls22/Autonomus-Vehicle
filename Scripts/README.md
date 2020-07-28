@@ -27,3 +27,7 @@
 - [20.07.27] 전방 도로이미지에 대해 흰색 Masking작업
 
 <img src= "./2.png" height="230px">
+
+- [20.07.28] Guide Line 기준 direction 결정 모듈 구현
+
+<img src= "./3.png" height="400px">
