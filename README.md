@@ -9,6 +9,9 @@
 - HW 제어, 시리얼 통신 모듈 구현
 <img src= "./Scripts/test.gif" width="680px">
 
+- ros 시뮬레이션 주행 영상
+<img src= "./Scripts/simulation.gif" width="680px">
+
 ## Env
 
 - Python3.6
