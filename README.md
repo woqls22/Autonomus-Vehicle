@@ -7,7 +7,7 @@
 - 차선 인식 모듈
 - 장애물 인식 모듈
 - HW 제어, 시리얼 통신 모듈 구현
-<img src= "./Scripts/test.gif" width="570px">
+<img src= "./Scripts/test.gif" width="680px">
 
 ## Env
 

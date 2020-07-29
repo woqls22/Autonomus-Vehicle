@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 FileName = "./track-s.mkv"
 capture = cv2.VideoCapture(FileName)
-YOLO_FLAG= True
+YOLO_FLAG= False
 if(not capture.isOpened()):
         print("Error : Opening Video")
 
@@ -102,6 +102,7 @@ while True:
         frame = cv2.putText(frame, '[Driving Info] : '+direction,  (50, 50) , cv2.FONT_HERSHEY_SIMPLEX,0.8, (0,255,255), 2, cv2.LINE_AA)
         cv2.imshow("dst", frame)
         cv2.imshow("dst1",dst)
+        cv2.imshow("canny", src1)
         if(YOLO_FLAG):
                 cv2.imshow("YOLO",YOLO)
         if (cv2.waitKey(2) > 0):
