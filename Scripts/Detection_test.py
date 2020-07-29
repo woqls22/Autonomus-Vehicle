@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 FileName = "./track-s.mkv"
 capture = cv2.VideoCapture(FileName)
-YOLO_FLAG= False
+YOLO_FLAG= True
 if(not capture.isOpened()):
         print("Error : Opening Video")
 
@@ -78,8 +78,10 @@ while True:
                 for i in lines:
                         cv2.line(dst, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if (i[0][2] < int(width / 3)):
+                                #cv2.circle(dst, (i[0][2], i[0][3]), 5, (255, 255, 255), -1)
                                 direction = "Turn Right " + str(abs(width / 2 + i[0][2]))
                         elif (i[0][0] > int(width * 2 / 3)):
+                                #cv2.circle(dst, (i[0][0], i[0][1]), 5, (255, 255, 255), -1)
                                 direction = "Turn Left " + str(abs(width / 2 - i[0][0]))
 
         dst = cv2.putText(dst, '[Driving Info] : ' + direction, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8,
@@ -95,14 +97,15 @@ while True:
                 for i in lines:
                         cv2.line(frame, (i[0][0], i[0][1]), (i[0][2], i[0][3]), (0, 0, 255), 2)
                         if(i[0][2]<int(width/4)):
+                                #cv2.circle(frame, (i[0][2], i[0][3]), 5, (255, 255, 255), -1)
                                 direction = "Turn Right " + str(abs(width/2+i[0][2]))
                         elif(i[0][0]>int(width*3/4)):
+                                #cv2.circle(frame, (i[0][0], i[0][1]), 5, (255, 255, 255), -1)
                                 direction = "Turn Left "+ str(abs(width/2-i[0][0]))
 
         frame = cv2.putText(frame, '[Driving Info] : '+direction,  (50, 50) , cv2.FONT_HERSHEY_SIMPLEX,0.8, (0,255,255), 2, cv2.LINE_AA)
         cv2.imshow("dst", frame)
         cv2.imshow("dst1",dst)
-        cv2.imshow("canny", src1)
         if(YOLO_FLAG):
                 cv2.imshow("YOLO",YOLO)
         if (cv2.waitKey(2) > 0):
