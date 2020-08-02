@@ -9,9 +9,11 @@
 - HW 제어, 시리얼 통신 모듈 구현
 <img src= "./Scripts/test.gif" width="680px">
 
-- ros 시뮬레이션 주행 영상
+- ros 영상처리 기반 시뮬레이션 주행 영상
 <img src= "./Scripts/simulation.gif" width="680px">
 
+- ros LIDAR 센서 기반 시뮬레이션 주행 영상
+<img src= "./Scripts/lidar.gif" width="680px">
 ## Env
 
 - Python3.6
