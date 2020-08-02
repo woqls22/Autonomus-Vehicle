@@ -37,6 +37,7 @@ pip install opencv-python
 - [ ] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함.
 - [ ] 실질적 주행을 위해 조명, 바닥면 상태를 고려할 수 있는 머신러닝 모델적용
 - [X] Object Recognition ML Model Load(YOLO V3) [07.28]
+- [X] LIDAR 센서 주행모듈 추가 [08.02]
 - [ ] Traffic Sign Recognition Model Load(YOLO V3)
 - [ ] HW Control Sign Generate
 - [ ] 하드웨어-영상처리 모듈간 통신 구현
