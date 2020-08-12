@@ -7,11 +7,13 @@
 - 차선 인식 모듈
 - 장애물 인식 모듈
 - HW 제어, 시리얼 통신 모듈 구현
-<img src= "./Scripts/test.gif" width="680px">
+<img src= "./Scripts/Resources/test.gif" width="680px">
 
-- ros 시뮬레이션 주행 영상
-<img src= "./Scripts/simulation.gif" width="680px">
+- ros 영상처리 기반 시뮬레이션 주행 영상
+<img src= "./Scripts/Resources/simulation.gif" width="680px">
 
+- ros LIDAR 센서 기반 시뮬레이션 주행 영상
+<img src= "./Scripts/Resources/lidar.gif" width="680px">
 ## Env
 
 - Python3.6
@@ -33,6 +35,7 @@ pip install opencv-python
 - [X] 원근 변환을 통해 전방 도로이미지를 변환.[07.28]
 - [X] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함[08.12]
 - [X] Object Recognition ML Model Load(YOLO V3) [07.28]
+- [X] LIDAR 센서 주행모듈 추가 [08.02]
 - [ ] Traffic Sign Recognition Model Load(YOLO V3)
 - [ ] HW Control Sign Generate
 
@@ -40,20 +43,20 @@ pip install opencv-python
 
 - [20.07.12] 영상처리모듈 : ROI, Hough 변환을 통해 전방 도로이미지에 대한 대표 직선 검출 구현
 
-<img src= "./Scripts/1.png" width="500px">
+<img src= "./Scripts/Resources/1.png" width="500px">
 
 - [20.07.27] 전방 도로이미지에 대해 흰색 Masking작업
 
-<img src= "./Scripts/2.png" height="230px">
+<img src= "./Scripts/Resources/2.png" height="230px">
 
 - [20.07.28] Guide Line 기준 direction 결정 모듈 구현
 
-<img src= "./Scripts/3.png" height="300px"><img src= "./Scripts/4.PNG" height="300px">
+<img src= "./Scripts/Resources/3.png" height="300px"><img src= "./Scripts/4.PNG" height="300px">
 
 - [20.07.28] 전방 도로 bird view 구현
 
-<img src= "./Scripts/8.PNG" height="330px">
+<img src= "./Scripts/Resources/8.PNG" height="330px">
 
 - [20.07.28] YOLO tiny v3모델 적용, object detection
 
-<img src= "./Scripts/9.PNG" height="330px">
+<img src= "./Scripts/Resources/9.PNG" height="330px">
