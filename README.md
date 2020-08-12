@@ -31,13 +31,10 @@ pip install opencv-python
 - [X] ROI를 바탕으로 차선 인식 Region 외의 Thresholding적용 [07.12]
 - [X] 차선 색상 마스킹[07.27]
 - [X] 원근 변환을 통해 전방 도로이미지를 변환.[07.28]
-- [ ] Sliding Window Searching을 통해 곡선 차선의 인식오차 최소화
-- [ ] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함.
-- [ ] 실질적 주행을 위해 조명, 바닥면 상태를 고려할 수 있는 머신러닝 모델적용
+- [X] 최종적으로 인식된 차선을 바탕으로 인식결과를 표시함[08.12]
 - [X] Object Recognition ML Model Load(YOLO V3) [07.28]
 - [ ] Traffic Sign Recognition Model Load(YOLO V3)
 - [ ] HW Control Sign Generate
-- [ ] 하드웨어-영상처리 모듈간 통신 구현
 
 ## Revision History
 
