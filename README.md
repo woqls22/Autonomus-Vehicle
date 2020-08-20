@@ -37,7 +37,7 @@ pip install opencv-python
 - [X] Object Recognition ML Model Load(YOLO V3) [07.28]
 - [X] LIDAR 센서 주행모듈 추가 [08.02]
 - [ ] Traffic Sign Recognition Model Load(YOLO V3)
-- [ ] HW Control Sign Generate
+- [X]] HW Control Sign Generate
 
 ## Revision History
 
