@@ -12,8 +12,7 @@
 - ros 영상처리 기반 시뮬레이션 주행 영상
 <img src= "./Scripts/Resources/simulation.gif" width="680px">
 
-- ros LIDAR 센서 기반 시뮬레이션 주행 영상
-<img src= "./Scripts/Resources/lidar.gif" width="680px">
+
 ## Env
 
 - Python3.6

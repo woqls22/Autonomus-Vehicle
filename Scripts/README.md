@@ -39,3 +39,6 @@
 - [20.07.28] 전방 도로 bird view 구현
 
 <img src= "./Resources/8.PNG" height="330px">
+
+- ros LIDAR 센서 기반 시뮬레이션 주행 영상
+<img src= "./Resources/lidar.gif" width="680px">
