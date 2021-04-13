@@ -9,7 +9,7 @@
 - HW 제어, 시리얼 통신 모듈 구현
 <img src= "./Scripts/Resources/test.gif" width="680px">
 
-- ros 영상처리 기반 시뮬레이션 주행 영상
+- ros 영상처리 기반 시뮬레이션 주행 영상 : Bird View 변환
 <img src= "./Scripts/Resources/simulation.gif" width="680px">
 
 
